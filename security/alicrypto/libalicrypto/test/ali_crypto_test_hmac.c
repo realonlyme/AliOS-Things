@@ -3,7 +3,7 @@
  */
 
 #include "ali_crypto.h"
-#include "ali_crypto_test.h"
+#include "./inc/ali_crypto_test.h"
 
 #define TEST_KEY_SIZE           (16)
 #define TEST_DATA_SIZE          (141)

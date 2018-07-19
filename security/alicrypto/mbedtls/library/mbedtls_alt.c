@@ -3,7 +3,7 @@
  */
 
 #if !defined(MBEDTLS_CONFIG_FILE)
-#include "mbedtls/config.h"
+#include "../include/mbedtls/config.h"
 #else
 #include MBEDTLS_CONFIG_FILE
 #endif
@@ -13,11 +13,11 @@
 #include <string.h>
 
 #if defined(MBEDTLS_DEBUG_C)
-#include "mbedtls/debug.h"
+#include "../include/mbedtls/debug.h"
 #endif
 
 #if defined(MBEDTLS_THREADING_ALT)
-#include "mbedtls/threading.h"
+#include "../include/mbedtls/threading.h"
 #endif
 
 #define MBEDTLS_ALT_PRINT(_f, _a ...)  \

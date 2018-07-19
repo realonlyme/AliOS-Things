@@ -2,10 +2,10 @@
  * Copyright (C) 2017 The YunOS Project. All rights reserved.
  */
 
-#include "mbed_crypto.h"
+#include "../../libalicrypto/mbed/inc/mbed_crypto.h"
 #include "ali_crypto.h"
 #include "drv_tee.h"
-#include "mbedtls/platform.h"
+#include "../../mbedtls/include/mbedtls/platform.h"
 
 #define TEE_MIN_RSA_KEY_SIZE      (256)
 #define TEE_MAX_RSA_KEY_SIZE      (2048)

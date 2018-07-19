@@ -22,15 +22,15 @@
  */
 
 #if !defined(MBEDTLS_CONFIG_FILE)
-#include "mbedtls/config.h"
+#include "../include/mbedtls/config.h"
 #else
 #include MBEDTLS_CONFIG_FILE
 #endif
 
 #if defined(MBEDTLS_OID_C)
 
-#include "mbedtls/oid.h"
-#include "mbedtls/rsa.h"
+#include "../include/mbedtls/oid.h"
+#include "../include/mbedtls/rsa.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -42,7 +42,7 @@
 #endif
 
 #if defined(MBEDTLS_X509_USE_C) || defined(MBEDTLS_X509_CREATE_C)
-#include "mbedtls/x509.h"
+#include "../include/mbedtls/x509.h"
 #endif
 
 /*

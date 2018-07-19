@@ -25,20 +25,20 @@
  */
 
 #if !defined(MBEDTLS_CONFIG_FILE)
-#include "mbedtls/config.h"
+#include "../include/mbedtls/config.h"
 #else
 #include MBEDTLS_CONFIG_FILE
 #endif
 
 #if defined(MBEDTLS_MD5_C)
 
-#include "mbedtls/md5.h"
+#include "../include/mbedtls/md5.h"
 
 #include <string.h>
 
 #if defined(MBEDTLS_SELF_TEST)
 #if defined(MBEDTLS_PLATFORM_C)
-#include "mbedtls/platform.h"
+#include "../include/mbedtls/platform.h"
 #else
 #include <stdio.h>
 #define mbedtls_printf printf

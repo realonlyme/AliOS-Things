@@ -11,9 +11,6 @@ $(NAME)_TYPE := kernel
 endif
 endif
 
-$(NAME)_INCLUDES     += ./mbedtls/include/mbedtls
-$(NAME)_INCLUDES     += ./libalicrypto/mbed/inc
-$(NAME)_INCLUDES     += ./libalicrypto/sw
 GLOBAL_INCLUDES      += ./libalicrypto/inc
 
 $(NAME)_CFLAGS       += -DCONFIG_CRYPT_MBED=1 -DCONFIG_DBG_CRYPT=1
@@ -24,13 +21,12 @@ $(NAME)_CFLAGS      += -W -Wdeclaration-after-statement
 endif
 
 ifneq (, $(findstring cb2201, $(BUILD_STRING)))
-$(NAME)_INCLUDES	+= ./csky/cb2201
 $(NAME)_SOURCES     += 							\
-           ./csky/ch2201/aes.c 	\
+           ./csky/ch2201/aes.c 					\
            ./libalicrypto/mbed/hash/hash.c 		\
-           ./csky/ch2201/rsa.c 		\
+           ./csky/ch2201/rsa.c 					\
            ./libalicrypto/mbed/mac/hmac.c 		\
-           ./csky/ch2201/rand.c 	\
+           ./csky/ch2201/rand.c 				\
            ./libalicrypto/ali_crypto.c
 
 else
@@ -45,8 +41,6 @@ $(NAME)_SOURCES     += 							\
 endif
 
 $(NAME)_CFLAGS      += -D_FILE_OFFSET_BITS=64
-
-$(NAME)_INCLUDES 	+= ./mbedtls/include
 
 $(NAME)_SOURCES     += 									\
            ./mbedtls/library/aes.c
@@ -71,7 +65,6 @@ $(NAME)_SOURCES     += 									\
 
 ifeq ($(ALICRYPTO_TEST), yes)
 
-$(NAME)_INCLUDES     += ./libalicrypto/test/inc
 $(NAME)_SOURCES += 												\
 				./libalicrypto/test/ali_crypto_test.c 			\
 				./libalicrypto/test/ali_crypto_test_comm.c 		\

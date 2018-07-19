@@ -26,6 +26,7 @@ src = Split('''
         ./libalicrypto/test/ali_crypto_test_hmac.c 
 ''')
 
+<<<<<<< HEAD
 incs = Split('''
         ./mbedtls/include/mbedtls
         ./libalicrypto/mbed/inc
@@ -33,13 +34,14 @@ incs = Split('''
         ./mbedtls/include
 	./libalicrypto/test/inc
 ''')
+=======
+>>>>>>> b2c6d429c... [#16291090] reconstruct local include files in alicrypto
 
 gincs = Split('''
         ./libalicrypto/inc
 ''')
 
 comp = aos_component('alicrypto', src)
-comp.add_includes(*incs)
 comp.add_global_includes(*gincs)
 comp.add_macros('CONFIG_CRYPT_MBED=1')
 comp.add_macros('CONFIG_DBG_CRYPT=1')

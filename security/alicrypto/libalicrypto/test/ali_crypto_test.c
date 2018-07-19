@@ -3,7 +3,7 @@
  */
 
 #include "ali_crypto.h"
-#include "ali_crypto_test.h"
+#include "./inc/ali_crypto_test.h"
 
 void ali_crypto_test_entry(void)
 {

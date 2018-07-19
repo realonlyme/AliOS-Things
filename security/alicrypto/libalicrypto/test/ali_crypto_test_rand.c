@@ -2,7 +2,7 @@
  * Copyright (C) 2017 The YunOS Project. All rights reserved.
  */
 
-#include "ali_crypto_test.h"
+#include "./inc/ali_crypto_test.h"
 
 int ali_crypto_rand_test(void)
 {

@@ -24,7 +24,7 @@
  */
 
 #if !defined(MBEDTLS_CONFIG_FILE)
-#include "mbedtls/config.h"
+#include "../include/mbedtls/config.h"
 #else
 #include MBEDTLS_CONFIG_FILE
 #endif
@@ -32,28 +32,28 @@
 #if defined(MBEDTLS_MD_C)
 
 #include "ali_crypto.h"
-#include "mbedtls/md.h"
-#include "mbedtls/hash.h"
-#include "mbedtls/md_internal.h"
+#include "../include/mbedtls/md.h"
+#include "../include/mbedtls/hash.h"
+#include "../include/mbedtls/md_internal.h"
 
 #if defined(MBEDTLS_MD5_C)
-#include "mbedtls/md5.h"
+#include "../include/mbedtls/md5.h"
 #endif
 
 #if defined(MBEDTLS_SHA1_C)
-#include "mbedtls/sha1.h"
+#include "../include/mbedtls/sha1.h"
 #endif
 
 #if defined(MBEDTLS_SHA256_C)
-#include "mbedtls/sha256.h"
+#include "../include/mbedtls/sha256.h"
 #endif
 
 #if defined(MBEDTLS_SHA512_C)
-#include "mbedtls/sha512.h"
+#include "../include/mbedtls/sha512.h"
 #endif
 
 #if defined(MBEDTLS_PLATFORM_C)
-#include "mbedtls/platform.h"
+#include "../include/mbedtls/platform.h"
 #else
 #include <stdlib.h>
 #define mbedtls_calloc    calloc

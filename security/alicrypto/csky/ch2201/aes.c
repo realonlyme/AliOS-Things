@@ -2,7 +2,7 @@
  * Copyright (C) 2017 The YunOS Project. All rights reserved.
  */
 
-#include "mbed_crypto.h"
+#include "../../libalicrypto/mbed/inc/mbed_crypto.h"
 #include "ali_crypto.h"
 #include "drv_tee.h"
 

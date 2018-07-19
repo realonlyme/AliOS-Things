@@ -3,7 +3,7 @@
  */
 
 #include "ali_crypto.h"
-#include "ali_crypto_test.h"
+#include "./inc/ali_crypto_test.h"
 
 #define EN_GCOV_COVERAGE 1
 

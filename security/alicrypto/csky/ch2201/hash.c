@@ -2,9 +2,9 @@
  * Copyright (C) 2017 The YunOS Project. All rights reserved.
  */
 
-#include "mbed_crypto.h"
 #include "ali_crypto.h"
 #include "drv_tee.h"
+#include "../../libalicrypto/mbed/inc/mbed_crypto.h"
 
 ali_crypto_result ali_hash_get_ctx_size(hash_type_t type, size_t *size)
 {

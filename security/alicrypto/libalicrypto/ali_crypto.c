@@ -5,7 +5,7 @@
 #include "ali_crypto.h"
 
 #if CONFIG_CRYPT_MBED
-#include "mbed_crypto.h"
+#include "./mbed/inc/mbed_crypto.h"
 #endif
 
 #if CONFIG_CRYPT_MBED
