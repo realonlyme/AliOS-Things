@@ -7,7 +7,7 @@
 
 #include "ali_crypto.h"
 #if !defined(MBEDTLS_CONFIG_FILE)
-#include "../../mbedtls/include/mbedtls/config.h"
+#include "../../../mbedtls/include/mbedtls/config.h"
 #else
 #include MBEDTLS_CONFIG_FILE
 #endif
@@ -15,15 +15,15 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "../../mbedtls/include/mbedtls/aes.h"
-#include "../../mbedtls/include/mbedtls/sha1.h"
-#include "../../mbedtls/include/mbedtls/sha256.h"
-#include "../../mbedtls/include/mbedtls/sha512.h"
-#include "../../mbedtls/include/mbedtls/md.h"
-#include "../../mbedtls/include/mbedtls/hash.h"
-#include "../../mbedtls/include/mbedtls/md5.h"
-#include "../../mbedtls/include/mbedtls/rsa.h"
-#include "../../mbedtls/include/mbedtls/hmac.h"
+#include "../../../mbedtls/include/mbedtls/aes.h"
+#include "../../../mbedtls/include/mbedtls/sha1.h"
+#include "../../../mbedtls/include/mbedtls/sha256.h"
+#include "../../../mbedtls/include/mbedtls/sha512.h"
+#include "../../../mbedtls/include/mbedtls/md.h"
+#include "../../../mbedtls/include/mbedtls/hash.h"
+#include "../../../mbedtls/include/mbedtls/md5.h"
+#include "../../../mbedtls/include/mbedtls/rsa.h"
+#include "../../../mbedtls/include/mbedtls/hmac.h"
 
 #if CONFIG_DBG_CRYPT
 #define MBED_DBG_E(_f, _a ...)  printf("E %s %d: "_f, \
