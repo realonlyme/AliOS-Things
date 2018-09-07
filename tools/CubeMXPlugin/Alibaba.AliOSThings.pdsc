@@ -1438,23 +1438,31 @@
       <require Cclass="AliOSThings" Cgroup="framework" Csub="connectivity_mqtt"/>
       <require Cclass="AliOSThings" Cgroup="framework" Csub="fota_platform_opt" Cvariant="mqtt"/>
     </condition>
+    <!--
     <condition id="cond_fota_platform__alink">
       <require Cclass="AliOSThings" Cgroup="framework" Csub="protocol_alink"/>
       <require Cclass="AliOSThings" Cgroup="framework" Csub="fota_platform_opt" Cvariant="alink"/>
     </condition>
+    -->
     <condition id="cond_fota_platform__coap">
       <require Cclass="AliOSThings" Cgroup="framework" Csub="connectivity_coap"/>
       <require Cclass="AliOSThings" Cgroup="framework" Csub="fota_platform_opt" Cvariant="coap"/>
     </condition>
+    <!-- Not support now
     <condition id="cond_fota_platform__common">
       <require Cclass="AliOSThings" Cgroup="framework" Csub="fota_platform_opt" Cvariant="common"/>  
       <require Cclass="AliOSThings" Cgroup="framework" Csub="fota_platform_common"/>
     </condition>
+    -->
     <condition id="depend_framework_fota_platform">    
       <accept condition="cond_fota_platform__mqtt"/>
+      <!--
       <accept condition="cond_fota_platform__alink"/>
+      -->
       <accept condition="cond_fota_platform__coap"/>
+      <!--
       <accept condition="cond_fota_platform__common"/>
+      -->
     </condition>  
     <condition id="depend_framework_fota_platform_mqtt">
       <require Cclass="AliOSThings" Cgroup="framework" Csub="activation"/>

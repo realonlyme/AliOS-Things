@@ -237,6 +237,7 @@
         <SubComponent Csub="" Cvariant="stm32l4xxIiuniversal:stm32l4xxIiuniversal">
             <File Category="include" Condition="" Name="aos/board/stm32l4xx_universal/" Version="" attr="" select="" src=""/>
             <File Category="include" Condition="" Name="aos/board/stm32l4xx_universal/init/" Version="" attr="" select="" src=""/>
+            <File Category="include" Condition="" Name="aos/board/stm32l4xx_universal/hal/" Version="" attr="" select="" src=""/>
             <File Category="source" Condition="" Name="aos/board/stm32l4xx_universal/init/soc_init.c" Version="" attr="" select="" src=""/>
             <File Category="source" Condition="" Name="aos/board/stm32l4xx_universal/init/board_partition.c" Version="" attr="" select="" src=""/>
         </SubComponent>

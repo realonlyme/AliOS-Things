@@ -337,7 +337,6 @@
     <RefParameter Comment="Condition Iidepend Iikernel Iivfs Ii Other" DefaultValue="true" Name="CONDITIONIidependIikernelIivfsIiOther" Type="boolean" Visible="false"/>
     <RefParameter Comment="Condition Iidepend Iiexample Iiudataapp" DefaultValue="true" Name="CONDITIONIidependIiexampleIiudataapp" Type="boolean" Visible="false"/>
     <RefParameter Comment="Condition Ii Arm Ii Compiler" DefaultValue="true" Name="CONDITIONIiARMIiCompiler" Type="boolean" Visible="false"/>
-    <RefParameter Comment="Condition Iicond Iifota Iiplatform Ii Iicommon" DefaultValue="true" Name="CONDITIONIicondIifotaIiplatformIiIicommon" Type="boolean" Visible="false"/>
     <RefParameter Comment="Condition Iiops Ii Alicrypto Ii Test" DefaultValue="true" Name="CONDITIONIiopsIiALICRYPTOIiTEST" Type="boolean" Visible="false"/>
     <RefParameter Comment="Condition Iidepend Iiframework Iiconnectivity Iimqtt" DefaultValue="true" Name="CONDITIONIidependIiframeworkIiconnectivityIimqtt" Type="boolean" Visible="false"/>
     <RefParameter Comment="Condition Iidepend Iiframework Iifota Iidownload" DefaultValue="true" Name="CONDITIONIidependIiframeworkIifotaIidownload" Type="boolean" Visible="false"/>
@@ -381,7 +380,6 @@
     <RefParameter Comment="Condition Iicond Iifota Iisocket Ii Iisocket Iistand" DefaultValue="true" Name="CONDITIONIicondIifotaIisocketIiIisocketIistand" Type="boolean" Visible="false"/>
     <RefParameter Comment="Condition Iiops Iihdlc" DefaultValue="true" Name="CONDITIONIiopsIihdlc" Type="boolean" Visible="false"/>
     <RefParameter Comment="Condition Ii Mcu Ii Fpu" DefaultValue="true" Name="CONDITIONIiMCUIiFPU" Type="boolean" Visible="false"/>
-    <RefParameter Comment="Condition Iicond Iifota Iiplatform Ii Iialink" DefaultValue="true" Name="CONDITIONIicondIifotaIiplatformIiIialink" Type="boolean" Visible="false"/>
     <RefParameter Comment="Condition Iideveloperkit Iiboard" DefaultValue="true" Name="CONDITIONIideveloperkitIiboard" Type="boolean" Visible="false"/>
     <RefParameter Comment="Condition Ii Iar Ii Compiler" DefaultValue="true" Name="CONDITIONIiIARIiCompiler" Type="boolean" Visible="false"/>
     <RefParameter Comment="Condition Iidepend Iiexample Iilinkkitapp" DefaultValue="true" Name="CONDITIONIidependIiexampleIilinkkitapp" Type="boolean" Visible="false"/>
