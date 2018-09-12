@@ -21,7 +21,9 @@ endif
 ifeq ($(HOST_ARCH),linux)
 $(NAME)_PREBUILT_LIBRARY := ./linux/activation.a
 endif
-
+ifeq ($(HOST_ARCH),ANDES_N10)
+$(NAME)_PREBUILT_LIBRARY := ./ANDES_N10/activation.a
+endif
 ifeq ($(HOST_ARCH),xtensa)
 ifeq ($(HOST_MCU_FAMILY),esp32)
 $(NAME)_PREBUILT_LIBRARY := ./xtensa/esp32/activation.a
