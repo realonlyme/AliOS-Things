@@ -153,8 +153,11 @@
         <Defines Name="USE_LPTHREAD" Type="Cdefine" Condition="SEMAliOSThingsJjframeworkJjconnectivityIilinkAacoapJjwithIiiotkit"/>
         <!--Defines of component ywss4linkkit-->
         <Defines Name="CONFIG_YWSS" Type="Cdefine" Condition="SEMAliOSThingsJjframeworkJjywss4linkkit"/>        
-        <!--Defines of component iotkit-->
-        <Defines Name="CONFIG_IOT_KIT" Type="Cdefine" Condition="SEMAliOSThingsJjframeworkJjprotocolIilinkkitIiiotkit"/> 
+        <!--Defines of component iotkit_tls-->
+        <Defines Name="CONFIG_IOT_KIT" Type="Cdefine" Condition="SEMAliOSThingsJjframeworkJjprotocolIilinkkitIiiotkit"/>
+        <!--Defines of component iotkit_wotls-->
+        <Defines Name="CONFIG_IOT_KIT" Type="Cdefine" Condition="SEMAliOSThingsJjframeworkJjprotocolIilinkkitIiiotkit"/>
+        <Defines Name="CONFIG_IOT_KIT" Type="IOTX_WITHOUT_TLS" Condition="SEMAliOSThingsJjframeworkJjprotocolIilinkkitIiiotkit"/>
         <!--<Defines Name="UTILS_printf" Value="HAL_Printf" Type="Cdefine" Condition="SEMAliOSThingsJjframeworkJjprotocolIilinkkitIiiotkit"/>-->
         <Defines Name="LITE_UTILS_CONFIG_H" Value='&#39;\"ilop_utils_config.h\"&#39;' Type="Cdefine" Condition="SEMAliOSThingsJjframeworkJjprotocolIilinkkitIiiotkit"/>     
         <Defines Name="CONFIG_GUIDER_AUTH_TIMEOUT" Value="500" Type="Cdefine" Condition="SEMAliOSThingsJjframeworkJjprotocolIilinkkitIiiotkit"/> 
@@ -572,8 +575,8 @@
             <File Category="source" Condition="" Name="aos/framework/protocol/linkkit/iotkit/hal-impl/rhino/HAL_TCP_rhino.c" Version="" attr="" select="" src=""/>
             <File Category="source" Condition="" Name="aos/framework/protocol/linkkit/iotkit/hal-impl/rhino/HAL_PRODUCT_rhino.c" Version="" attr="" select="" src=""/>
             <File Category="source" Condition="" Name="aos/framework/protocol/linkkit/iotkit/hal-impl/rhino/HAL_UDP_rhino.c" Version="" attr="" select="" src=""/>
-            <File Category="source" Condition="" Name="aos/framework/protocol/linkkit/iotkit/hal-impl/tls/mbedtls/HAL_DTLS_mbedtls.c" Version="" attr="" select="" src=""/>
-            <File Category="source" Condition="" Name="aos/framework/protocol/linkkit/iotkit/hal-impl/tls/mbedtls/HAL_TLS_mbedtls.c" Version="" attr="" select="" src=""/>
+            <File Category="source" Condition="ops__tls;(SIiCclassIiAliOSThings&amp;SIiCgroupIiOPTION&amp;SIiCsubIinoIitls)" Name="aos/framework/protocol/linkkit/iotkit/hal-impl/tls/mbedtls/HAL_DTLS_mbedtls.c" Version="" attr="" select="" src=""/>
+            <File Category="source" Condition="ops__tls;(SIiCclassIiAliOSThings&amp;SIiCgroupIiOPTION&amp;SIiCsubIinoIitls)" Name="aos/framework/protocol/linkkit/iotkit/hal-impl/tls/mbedtls/HAL_TLS_mbedtls.c" Version="" attr="" select="" src=""/>
             <File Category="source" Condition="" Name="aos/framework/protocol/linkkit/iotkit/iotkit-system/src/sdk-impl.c" Version="" attr="" select="" src=""/>
             <File Category="source" Condition="" Name="aos/framework/protocol/linkkit/iotkit/iotkit-system/src/ca.c" Version="" attr="" select="" src=""/>
             <File Category="source" Condition="" Name="aos/framework/protocol/linkkit/iotkit/iotkit-system/src/device.c" Version="" attr="" select="" src=""/>

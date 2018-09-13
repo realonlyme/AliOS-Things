@@ -685,9 +685,9 @@
         <file category="source" name="aos/framework/protocol/linkkit/dm/src/dm_slist.c"/>
       </files>
     </component>
-    <component Cclass="AliOSThings" Cgroup="framework" Csub="protocol_linkkit_iotkit" condition="depend_protocol_linkkit_iotkit" Cversion="1.0.0">
-      <description>depends on mbedtls digest_algorithm cjson base64 log modules_fs_kv hal</description>  
-     <RTE_Components_h>
+    <component Cclass="AliOSThings" Cgroup="framework" Csub="protocol_linkkit_iotkit" Cvariant="withTLS" condition="depend_protocol_linkkit_iotkit" Cversion="1.0.0">
+      <description>iotkit depends on TLS which aquire SRAM no less than 128KB</description>  
+      <RTE_Components_h>
         <!-- the following content goes into file 'RTE_Components.h' -->
         #define CONFIG_IOT_KIT                 /*Global MARCO of framework protocol_linkkit_iotkit*/ 
         #define UTILS_printf HAL_Printf        /*Local MARCO of framework protocol_linkkit_iotkit*/
@@ -723,11 +723,62 @@
         <file category="source" name="aos/framework/protocol/linkkit/iotkit/hal-impl/rhino/HAL_TCP_rhino.c"/>
         <file category="source" name="aos/framework/protocol/linkkit/iotkit/hal-impl/rhino/HAL_PRODUCT_rhino.c"/>
         <file category="source" name="aos/framework/protocol/linkkit/iotkit/hal-impl/rhino/HAL_UDP_rhino.c"/>
-        <file category="source" name="aos/framework/protocol/linkkit/iotkit/hal-impl/tls/mbedtls/HAL_DTLS_mbedtls.c"/>
         <!-- CubeMX Bug: not support file condition so we not use below right statement
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/hal-impl/tls/mbedtls/HAL_DTLS_mbedtls.c" condition="ops__tls"/>        
         <file category="source" name="aos/framework/protocol/linkkit/iotkit/hal-impl/tls/mbedtls/HAL_TLS_mbedtls.c" condition="ops__tls"/>
         -->
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/hal-impl/tls/mbedtls/HAL_DTLS_mbedtls.c"/>
         <file category="source" name="aos/framework/protocol/linkkit/iotkit/hal-impl/tls/mbedtls/HAL_TLS_mbedtls.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/iotkit-system/src/sdk-impl.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/iotkit-system/src/ca.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/iotkit-system/src/device.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/iotkit-system/src/guider.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/iotkit-system/src/id2_guider.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/iotkit-system/src/report.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/iotkit-system/src/class_interface.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/layers/config/src/dev_conf.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/base/utils/misc/utils_epoch_time.c" condition="cond_not_ARM_Compiler"/>        
+      </files>
+    </component>
+    <component Cclass="AliOSThings" Cgroup="framework" Csub="protocol_linkkit_iotkit" Cvariant="w_o_TLS" condition="depend_protocol_linkkit_iotkit" Cversion="1.0.0">
+      <description>iotkit via TCP direct which appropriate SRAM less than 128KB</description>  
+      <RTE_Components_h>
+        <!-- the following content goes into file 'RTE_Components.h' -->
+        #define CONFIG_IOT_KIT                 /*Global MARCO of framework protocol_linkkit_iotkit_wotls*/ 
+        #define UTILS_printf HAL_Printf        /*Local MARCO of framework protocol_linkkit_iotkit_wotls*/
+        #define CONFIG_GUIDER_AUTH_TIMEOUT 500 /*Local MARCO of framework protocol_linkkit_iotkit_wotls*/
+        #define MQTT_COMM_ENABLED              /*Local MARCO of framework protocol_linkkit_iotkit_wotls*/
+        #define IOTX_WITHOUT_TLS               /*Local MARCO of framework protocol_linkkit_iotkit_wotls*/
+      </RTE_Components_h>        
+      <files>   
+        <file category="include" name="aos/framework/protocol/linkkit/iotkit/sdk-encap/"/>  
+        <file category="include" name="aos/framework/protocol/linkkit/iotkit/sdk-encap/imports/"/>
+        <file category="include" name="aos/framework/protocol/linkkit/iotkit/iotkit-system/"/>
+        <file category="include" name="aos/framework/protocol/linkkit/iotkit/base/log/LITE-log/"/>
+        <file category="include" name="aos/framework/protocol/linkkit/iotkit/base/utils/"/>
+        <file category="include" name="aos/framework/protocol/linkkit/iotkit/layers/config/include/"/>
+        <file category="include" name="aos/framework/protocol/linkkit/iotkit/base/utils/LITE-utils/src/"/>
+        <file category="include" name="aos/framework/protocol/linkkit/iotkit/base/utils/misc/"/>
+        <file category="include" name="aos/framework/protocol/linkkit/iotkit/base/utils/digest/"/>
+        <file category="include" name="aos/framework/protocol/linkkit/iotkit/hal-impl/"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/base/log/LITE-log/lite-log.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/base/utils/LITE-utils/src/json_parser.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/base/utils/LITE-utils/src/json_token.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/base/utils/LITE-utils/src/mem_stats.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/base/utils/LITE-utils/src/string_utils.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/base/utils/misc/utils_httpc.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/base/utils/misc/utils_list.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/base/utils/misc/utils_net.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/base/utils/misc/utils_timer.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/base/utils/misc/work_queue.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/base/utils/digest/utils_base64.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/base/utils/digest/utils_hmac.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/base/utils/digest/utils_md5.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/base/utils/digest/utils_sha1.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/hal-impl/rhino/HAL_OS_rhino.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/hal-impl/rhino/HAL_TCP_rhino.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/hal-impl/rhino/HAL_PRODUCT_rhino.c"/>
+        <file category="source" name="aos/framework/protocol/linkkit/iotkit/hal-impl/rhino/HAL_UDP_rhino.c"/>
         <file category="source" name="aos/framework/protocol/linkkit/iotkit/iotkit-system/src/sdk-impl.c"/>
         <file category="source" name="aos/framework/protocol/linkkit/iotkit/iotkit-system/src/ca.c"/>
         <file category="source" name="aos/framework/protocol/linkkit/iotkit/iotkit-system/src/device.c"/>
