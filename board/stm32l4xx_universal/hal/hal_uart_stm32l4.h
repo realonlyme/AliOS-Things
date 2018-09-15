@@ -24,7 +24,7 @@
 #define PORT_UART5 5           /* NULL */
 #define PORT_UART6 6           /* NULL */
 
-#define PORT_UART_MAX_NUM 6
+#define PORT_UART_MAX_NUM 2
 /***************************** uart1 configure *******************************/
 #define UART1                          USART1
 // for AT
@@ -132,7 +132,7 @@
 #define UART6_TX_GPIO_CLK_ENABLE()     __HAL_RCC_GPIOB_CLK_ENABLE()
 #define UART6_RX_GPIO_CLK_ENABLE()     __HAL_RCC_GPIOB_CLK_ENABLE()
 
-#define MAX_BUF_UART_BYTES  4096
+#define MAX_BUF_UART_BYTES  1024
 
 #ifdef __cplusplus
 }
