@@ -84,6 +84,7 @@
         <PossibleValue Comment="DISABLE" Value="DISABLE"/>
         <PossibleValue Comment="developerkit depends mcu_stm32l4xx_cube sensor sal" Semaphore="SEMAliOSThingsJjboardJjdeveloperkit" Value="developerkit"/>
         <PossibleValue Comment="select this component if you choose a stm32l4xx serial MCU or BOARD" Semaphore="SEMAliOSThingsJjboardJjstm32l4xxIiuniversal" Value="stm32l4xxIiuniversal"/>
+        <PossibleValue Comment="select this component if you choose a stm32f4xx serial MCU or BOARD" Semaphore="SEMAliOSThingsJjboardJjstm32f4xxIiuniversal" Value="stm32f4xxIiuniversal"/>
         <PossibleValue Comment="depends mcu_stm32f4xx_cube sal" Semaphore="SEMAliOSThingsJjboardJjstm32f429ziAanucleo" Value="stm32f429ziAanucleo"/>
         <Condition Diagnostic="depend of board developerkit" Expression="CONDITIONIidependIiboardIideveloperkit=true"/>
     </RefParameter>
@@ -94,9 +95,7 @@
         <PossibleValue Comment="ldapp depends on cli mqtt cjson fota netmgr common" Semaphore="SEMAliOSThingsJjexampleJjldapp" Value="ldapp"/>
         <PossibleValue Comment="ldapp for developerkit, publish sensor data to linkdevelop platform" Semaphore="SEMAliOSThingsJjexampleJjldappIideveloperkit" Value="ldappIideveloperkit"/>
         <PossibleValue Comment="depends on mqtt iotkit cm dm alcs fota netmgr common ywss4linkkit cli" Semaphore="SEMAliOSThingsJjexampleJjlinkkitapp" Value="linkkitapp"/>
-        <PossibleValue Comment="mqttapp depends on cli mqtt cjson fota netmgr common" Semaphore="SEMAliOSThingsJjexampleJjmqttapp" Value="mqttapp"/>
-        <PossibleValue Comment="udataapp depends on cli netmgr common sensor udata" Semaphore="SEMAliOSThingsJjexampleJjudataapp" Value="udataapp"/>
-        <PossibleValue Comment="tinyengine example" Semaphore="SEMAliOSThingsJjexampleJjtinyengineIiapp" Value="tinyengineIiapp"/>
+        <PossibleValue Comment="mqttapp depends on cli mqtt netmgr common" Semaphore="SEMAliOSThingsJjexampleJjmqttapp" Value="mqttapp"/>
         <Condition Diagnostic="helloworld depend yloop cli" Expression="CONDITIONIidependIiexampleIihelloworld=true"/>
     </RefParameter>
     <RefParameter Comment="AliOSThings example" DefaultValue="disable" Group="Software component selection" Max="0" Min="0" Name="AliOSThingsJjexample" TabName="AliOSThingsJjAlibaba" Type="list" Visible="false"/>
@@ -380,6 +379,7 @@
     <RefParameter Comment="Condition Ii Iar Ii Compiler" DefaultValue="true" Name="CONDITIONIiIARIiCompiler" Type="boolean" Visible="false"/>
     <RefParameter Comment="Condition Iidepend Iiexample Iilinkkitapp" DefaultValue="true" Name="CONDITIONIidependIiexampleIilinkkitapp" Type="boolean" Visible="false"/>
     <RefParameter Comment="Condition Iidepend Iiexample Iimqttapp" DefaultValue="true" Name="CONDITIONIidependIiexampleIimqttapp" Type="boolean" Visible="false"/>
+    <RefParameter Comment="Condition Iidepend Iistm32f4xx Iiuniversal" DefaultValue="true" Name="CONDITIONIidependIistm32f4xxIiuniversal" Type="boolean" Visible="false"/>
     <RefParameter Comment="Condition Iidepend Iiframework Iiconnectivity Iicoap" DefaultValue="true" Name="CONDITIONIidependIiframeworkIiconnectivityIicoap" Type="boolean" Visible="false"/>
     <RefParameter Comment="Condition Iidepend Iiframework Iifota Iidownload Iihttp" DefaultValue="true" Name="CONDITIONIidependIiframeworkIifotaIidownloadIihttp" Type="boolean" Visible="false"/>
     <RefParameter Comment="Condition Iidepend Iiframework Iiconnectivity Iilink Aacoap Iiwith Iiiotkit" DefaultValue="true" Name="CONDITIONIidependIiframeworkIiconnectivityIilinkAacoapIiwithIiiotkit" Type="boolean" Visible="false"/>

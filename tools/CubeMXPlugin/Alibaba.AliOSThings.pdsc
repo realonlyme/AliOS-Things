@@ -25,8 +25,8 @@
     <component Cvendor="STMicroelectronics" Cclass="CubeMX" Cgroup="thirdparty" Cversion="4.0">
 	  <description>CUBEMX </description>
 	  <files>
-		<file category="other" attr="config" name="CubeMX/Alibaba.AliOSThings.0.6.1_Modes.xml"/>
-		<file category="other" attr="config" name="CubeMX/Alibaba.AliOSThings.0.6.1_Configs.xml"/>
+		<file category="other" attr="config" name="CubeMX/Alibaba.AliOSThings.0.6.2_Modes.xml"/>
+		<file category="other" attr="config" name="CubeMX/Alibaba.AliOSThings.0.6.2_Configs.xml"/>
 	  </files>
 	</component> 
     
@@ -144,6 +144,19 @@
         <file category="source" name="aos/board/stm32l4xx_universal/init/board_partition.c"/>
       </files>
     </component>
+    <component Cclass="AliOSThings" Cgroup="board" Cvariant="stm32f4xx_universal" condition="depend_stm32f4xx_universal" Cversion="1.0.0">
+      <description>select this component if you choose a stm32f4xx serial MCU or BOARD</description>
+      <RTE_Components_h>
+        <!-- the following content goes into file 'RTE_Components.h' -->            
+        #define CENTRALIZE_MAPPING         /*Global MARCO of board stm32f4_universal*/       
+      </RTE_Components_h> 
+      <files>
+        <file category="include" name="aos/board/stm32f4xx_universal/"/>
+        <file category="include" name="aos/board/stm32f4xx_universal/init/"/>
+        <file category="source" name="aos/board/stm32f4xx_universal/init/soc_init.c"/>
+        <file category="source" name="aos/board/stm32f4xx_universal/init/board.c"/>
+      </files>
+    </component>
     <component Cclass="AliOSThings" Cgroup="board" Cvariant="stm32f429zi-nucleo" condition="depend_board_stm32f429zi-nucleo" Cversion="1.0.0">
       <description>depends mcu_stm32f4xx_cube sal</description>
       <RTE_Components_h>
@@ -157,7 +170,6 @@
       <files>
         <file category="include" name="aos/board/stm32f429zi-nucleo/"/>
         <file category="include" name="aos/board/stm32f429zi-nucleo/aos/"/>
-        <file category="include" name="aos/board/stm32f429zi-nucleo/hal/"/>
 		<file category="include" name="aos/board/stm32f429zi-nucleo/Inc/"/>
         <file category="source" name="aos/board/stm32f429zi-nucleo/aos/board_partition.c"/>
         <file category="source" name="aos/board/stm32f429zi-nucleo/aos/soc_init.c"/>
@@ -222,7 +234,7 @@
       </files>
     </component>   
     <component Cclass="AliOSThings" Cgroup="example" Cvariant="mqttapp" condition="depend_example_mqttapp" Cversion="1.0.0">
-      <description>mqttapp depends on cli mqtt cjson fota netmgr common</description> 
+      <description>mqttapp depends on cli mqtt netmgr common</description> 
       <RTE_Components_h>
         <!-- the following content goes into file 'RTE_Components.h' -->
         #define MQTT_TEST               /*Global MARCO of example mqttapp*/ 
@@ -233,7 +245,26 @@
       <files>       
         <file category="source" name="aos/example/mqttapp/mqtt-example.c"/>
       </files>
-    </component>  
+    </component>
+    <!--
+    <component Cclass="AliOSThings" Cgroup="example" Cvariant="udataapp" condition="depend_example_udataapp" Cversion="1.0.0">
+      <description>udataapp depends on cli netmgr common sensor udata</description>  
+      <files>       
+        <file category="source" name="aos/example/uDataapp/uData-example.c"/>
+      </files>
+    </component> 
+	<component Cclass="AliOSThings" Cgroup="example" Cvariant="tinyengine_app" condition="depend_example_tinyengine_app" Cversion="1.0.0">
+      <description>tinyengine example</description> 
+	  <RTE_Components_h>        
+		#define VCALL_RHINO    /*Global MARCO of tinyengine app*/
+		#define BE_OS_AOS      /*Global MARCO of tinyengine app*/
+		#define TINY_ENGINE    /*Global MARCO of tinyengine app*/
+	  </RTE_Components_h>	  
+      <files>       
+        <file category="source" name="aos/example/tinyengine_app/tinyengine_app.c"/>
+      </files>
+    </component>
+    -->    
     <component Cclass="AliOSThings" Cgroup="device" Csub="sal" condition="depend_device_sal" Cversion="1.0.0">
       <description>device sal without at_adapter selected</description>
       <RTE_Components_h>
@@ -485,24 +516,6 @@
         <file category="source" name="aos/framework/GUI/littlevGL/lvgl/lv_themes/lv_theme_templ.c"/>
         <file category="source" name="aos/framework/GUI/littlevGL/lvgl/lv_themes/lv_theme_zen.c"/>
         <file category="source" name="aos/framework/GUI/littlevGL/lvgl/lv_themes/lv_theme_material.c"/>
-      </files>
-    </component>
-    <component Cclass="AliOSThings" Cgroup="example" Cvariant="udataapp" condition="depend_example_udataapp" Cversion="1.0.0">
-      <description>udataapp depends on cli netmgr common sensor udata</description>  
-      <files>       
-        <file category="source" name="aos/example/uDataapp/uData-example.c"/>
-      </files>
-    </component> 
-	<component Cclass="AliOSThings" Cgroup="example" Cvariant="tinyengine_app" condition="depend_example_tinyengine_app" Cversion="1.0.0">
-      <description>tinyengine example</description> 
-	  <RTE_Components_h>
-        <!-- the following content goes into file 'RTE_Components.h' -->
-		#define VCALL_RHINO    /*Global MARCO of tinyengine app*/
-		#define BE_OS_AOS      /*Global MARCO of tinyengine app*/
-		#define TINY_ENGINE    /*Global MARCO of tinyengine app*/
-	  </RTE_Components_h>	  
-      <files>       
-        <file category="source" name="aos/example/tinyengine_app/tinyengine_app.c"/>
       </files>
     </component>
 	<component Cclass="AliOSThings" Cgroup="framework" Csub="udata" Cversion="1.0.0">
@@ -1011,6 +1024,7 @@
         <file category="source" name="aos/platform/mcu/stm32f4xx_cube/aos/aos.c"/>
         <file category="source" name="aos/platform/mcu/stm32f4xx_cube/hal/hal_uart_stm32f4.c"/>
         <file category="source" name="aos/platform/mcu/stm32f4xx_cube/hal/hw.c"/>
+        <file category="include" name="aos/platform/mcu/stm32f4xx_cube/hal/"/>
         <!--
         <file category="source" name="aos/platform/mcu/stm32f4xx_cube/hal/hal_sd_stm32f4.c"/>
         <file category="source" name="aos/platform/mcu/stm32f4xx_cube/hal/hal_adc_stm32f4.c"/>
@@ -1305,6 +1319,11 @@
       <require Cclass="AliOSThings" Cgroup="device" Csub="sensor"/>
       <require Cclass="AliOSThings" Cgroup="device" Csub="sal"/>
     </condition>
+    <condition id="depend_stm32f4xx_universal">
+      <description>depend of board stm32f4xx_universal</description> 
+      <require Cclass="AliOSThings" Cgroup="platform" Csub="mcu" Cvariant="stm32f4xx_cube"/>
+      <require Cclass="AliOSThings" Cgroup="device" Csub="sal"/>
+    </condition>
     <condition id="depend_stm32l4xx_universal">
       <description>depend of board stm32l4xx_universal</description> 
       <require Cclass="AliOSThings" Cgroup="platform" Csub="mcu" Cvariant="stm32l4xx_cube"/>
@@ -1396,7 +1415,6 @@
       <description>depend of example mqttapp</description>
       <require Cclass="AliOSThings" Cgroup="tools" Csub="cli"/>
       <require Cclass="AliOSThings" Cgroup="framework" Csub="connectivity_mqtt"/>
-      <require Cclass="AliOSThings" Cgroup="utility" Csub="cjson"/>
       <require Cclass="AliOSThings" Cgroup="framework" Csub="netmgr"/>
       <require Cclass="AliOSThings" Cgroup="framework" Csub="common"/>
     </condition>
@@ -1561,8 +1579,7 @@
     <condition id="depend_protocol_linkkit_iotkit">
       <description>depend of protocol iotkit</description>
       <require Cclass="AliOSThings" Cgroup="security" Csub="mbedtls"/>
-      <require Cclass="AliOSThings" Cgroup="utility" Csub="digest_algorithm"/>  
-      <require Cclass="AliOSThings" Cgroup="utility" Csub="cjson"/> 
+      <require Cclass="AliOSThings" Cgroup="utility" Csub="digest_algorithm"/>
       <require Cclass="AliOSThings" Cgroup="utility" Csub="base64"/> 
       <require Cclass="AliOSThings" Cgroup="utility" Csub="log"/> 
       <require Cclass="AliOSThings" Cgroup="kernel" Csub="kv"/>     
@@ -1571,7 +1588,6 @@
     <condition id="depend_protocol_linkkit_iotkit_notls">
       <description>depend of protocol iotkit without tls</description>
       <require Cclass="AliOSThings" Cgroup="utility" Csub="digest_algorithm"/>  
-      <require Cclass="AliOSThings" Cgroup="utility" Csub="cjson"/> 
       <require Cclass="AliOSThings" Cgroup="utility" Csub="base64"/> 
       <require Cclass="AliOSThings" Cgroup="utility" Csub="log"/> 
       <require Cclass="AliOSThings" Cgroup="kernel" Csub="kv"/>     

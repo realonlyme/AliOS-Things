@@ -4,6 +4,7 @@ board\b_l475e\
 board\developerkit\
 board\starterkit\
 board\stm32l4xx_universal\
+board\stm32f4xx_universal\
 board\stm32f429zi-nucleo\
 board\stm32l432kc-nucleo\
 board\stm32l433rc-nucleo\

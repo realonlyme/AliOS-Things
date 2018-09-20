@@ -8,6 +8,7 @@
         <Component Name="AliOSThings:OPTION:ywssIisupport:$AliOSThingsJjOPTIONJjywssIisupport"/>
         <Component Name="AliOSThings:board:developerkit:$AliOSThingsJjboard"/>
         <Component Name="AliOSThings:board:stm32l4xxIiuniversal:$AliOSThingsJjboard"/>
+        <Component Name="AliOSThings:board:stm32f4xxIiuniversal:$AliOSThingsJjboard"/>
         <Component Name="AliOSThings:board:stm32f429ziAanucleo:$AliOSThingsJjboard"/>
         <Component Name="AliOSThings:example:helloworld:$AliOSThingsJjexample"/>
         <Component Name="AliOSThings:example:ldapp:$AliOSThingsJjexample"/>
@@ -27,8 +28,6 @@
         <Component Name="AliOSThings:framework:connectivityIimqtt:$AliOSThingsJjframeworkJjconnectivityIimqtt"/>
         <Component Name="AliOSThings:framework:connectivityIimqttIiMQTTPacket:$AliOSThingsJjframeworkJjconnectivityIimqttIiMQTTPacket"/>
         <Component Name="AliOSThings:framework:GUIIilittlevgl:$AliOSThingsJjframeworkJjGUIIilittlevgl"/>
-        <Component Name="AliOSThings:example:udataapp:$AliOSThingsJjexample"/>
-        <Component Name="AliOSThings:example:tinyengineIiapp:$AliOSThingsJjexample"/>
         <Component Name="AliOSThings:framework:udata:$AliOSThingsJjframeworkJjudata"/>
         <Component Name="AliOSThings:framework:fota:$AliOSThingsJjframeworkJjfota"/>
         <Component Name="AliOSThings:framework:fotaIidownload:$AliOSThingsJjframeworkJjfotaIidownload"/>
@@ -93,6 +92,8 @@
         <Defines Name="AT_PARSER_DELAY_FLAG" Type="Cdefine" Condition="SEMAliOSThingsJjboardJjdeveloperkit"/>
         <!--Defines of component stm32l4xx_universal-->
         <Defines Name="AT_PARSER_DELAY_FLAG" Type="Cdefine" Condition="SEMAliOSThingsJjboardJjstm32l4xxIiuniversal"/>
+        <!--Defines of component stm32f4xx_universal-->
+        <Defines Name="CENTRALIZE_MAPPING" Type="Cdefine" Condition="SEMAliOSThingsJjboardJjstm32f4xxIiuniversal"/>
         <!--Defines of component stm32f429zi-nucleo-->
         <Defines Name="STM32F429xx" Type="Cdefine" Condition="SEMAliOSThingsJjboardJjstm32f429ziAanucleo"/>
         <Defines Name="CENTRALIZE_MAPPING" Type="Cdefine" Condition="SEMAliOSThingsJjboardJjstm32f429ziAanucleo"/>
@@ -168,7 +169,7 @@
         <Defines Name="MQTT_COMM_ENABLED" Type="Cdefine" Condition="SEMAliOSThingsJjframeworkJjprotocolIilinkkitIiiotkitJjwIioIiTLS"/>
         <!--Defines of component hal-->
         <Defines Name="AOS_HAL" Type="Cdefine" Condition="SEMAliOSThingsJjkernelJjhal"/> 
-        <!--Defines of component modules_fs_kv-->
+        <!--Defines of component kv 128KB-->
         <Defines Name="AOS_KV" Type="Cdefine" Condition="SEMAliOSThingsJjkernelJjkvJj128KBRAM"/>
         <!--Defines of component rhino-->
         <Defines Name="SYSINFO_KERNEL_VERSION" Value='&#39;\"AOS-R-1.3.1\"&#39;' Type="Cdefine" Condition="SEMAliOSThingsJjkernelJjrhino"/>
@@ -233,10 +234,15 @@
         <SubComponent Csub="" Cvariant="stm32f429ziAanucleo:stm32f429ziAanucleo">
             <File Category="include" Condition="" Name="aos/board/stm32f429zi-nucleo/" Version="" attr="" select="" src=""/>
             <File Category="include" Condition="" Name="aos/board/stm32f429zi-nucleo/aos/" Version="" attr="" select="" src=""/>
-            <File Category="include" Condition="" Name="aos/board/stm32f429zi-nucleo/hal/" Version="" attr="" select="" src=""/>
             <File Category="include" Condition="" Name="aos/board/stm32f429zi-nucleo/Inc/" Version="" attr="" select="" src=""/>
             <File Category="source" Condition="" Name="aos/board/stm32f429zi-nucleo/aos/board_partition.c" Version="" attr="" select="" src=""/>
             <File Category="source" Condition="" Name="aos/board/stm32f429zi-nucleo/aos/soc_init.c" Version="" attr="" select="" src=""/>
+        </SubComponent>
+        <SubComponent Csub="" Cvariant="stm32f4xxIiuniversal:stm32f4xxIiuniversal">
+            <File Category="include" Condition="" Name="aos/board/stm32f4xx_universal/" Version="" attr="" select="" src=""/>
+            <File Category="include" Condition="" Name="aos/board/stm32f4xx_universal/init/" Version="" attr="" select="" src=""/>
+            <File Category="source" Condition="" Name="aos/board/stm32f4xx_universal/init/soc_init.c" Version="" attr="" select="" src=""/>
+            <File Category="source" Condition="" Name="aos/board/stm32f4xx_universal/init/board.c" Version="" attr="" select="" src=""/>
         </SubComponent>
         <SubComponent Csub="" Cvariant="stm32l4xxIiuniversal:stm32l4xxIiuniversal">
             <File Category="include" Condition="" Name="aos/board/stm32l4xx_universal/" Version="" attr="" select="" src=""/>
@@ -256,12 +262,6 @@
         </SubComponent>
     </RefComponent>
     <RefComponent Cclass="AliOSThings" Cgroup="example" Cversion="1Gg0Gg0">
-        <SubComponent Csub="" Cvariant="tinyengineIiapp:tinyengineIiapp">
-            <File Category="source" Condition="" Name="aos/example/tinyengine_app/tinyengine_app.c" Version="" attr="" select="" src=""/>
-        </SubComponent>
-        <SubComponent Csub="" Cvariant="udataapp:udataapp">
-            <File Category="source" Condition="" Name="aos/example/uDataapp/uData-example.c" Version="" attr="" select="" src=""/>
-        </SubComponent>
         <SubComponent Csub="" Cvariant="mqttapp:mqttapp">
             <File Category="source" Condition="" Name="aos/example/mqttapp/mqtt-example.c" Version="" attr="" select="" src=""/>
         </SubComponent>
@@ -779,6 +779,7 @@
             <File Category="source" Condition="" Name="aos/platform/mcu/stm32f4xx_cube/aos/aos.c" Version="" attr="" select="" src=""/>
             <File Category="source" Condition="" Name="aos/platform/mcu/stm32f4xx_cube/hal/hal_uart_stm32f4.c" Version="" attr="" select="" src=""/>
             <File Category="source" Condition="" Name="aos/platform/mcu/stm32f4xx_cube/hal/hw.c" Version="" attr="" select="" src=""/>
+            <File Category="include" Condition="" Name="aos/platform/mcu/stm32f4xx_cube/hal/" Version="" attr="" select="" src=""/>
             <File Category="source" Condition="" Name="aos/platform/mcu/stm32f4xx_cube/hal/hal_flash_stm32f4.c" Version="" attr="" select="" src=""/>
         </SubComponent>
         <SubComponent Csub="mcu" Cvariant="stm32l4xxIicube:stm32l4xxIicube" Cversion="1Gg0Gg0">
